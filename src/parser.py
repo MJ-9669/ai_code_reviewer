@@ -14,7 +14,7 @@ class ASTAnalyzer:
         lines = self.source_code.splitlines()
 
         for node in ast.iter_child_nodes(self.tree):
-            if isinstance(node, (ast.FunctionDef. ast.AsyncFunctionDef, ast.ClassDef)):
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
                 start_line = node.lineno
                 end_line = node.end_lineno
                 node_code = "\n".join(lines[start_line - 1:end_line])
@@ -30,4 +30,3 @@ class ASTAnalyzer:
                 })
 
         return chunks
-    
