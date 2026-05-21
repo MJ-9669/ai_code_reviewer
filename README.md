@@ -39,20 +39,30 @@ The application follows a strict 4-stage sequential pipeline:
 
 1. Clone the repository:
 
+   ```
+       git clone [https://github.com/MJ-9669/ai_code_reviewer.git]
+       cd ai-code-reviewer
+   ```
+
 2. Install dependencies:
 
-It is recommended to use a Python virtual environment.
-
-pip install -r requirements.txt
+   It is recommended to use a Python virtual environment.
+    ```
+       pip install -r requirements.txt
+    ```
 
 3. Configure Environment Variables:
 
-Create a .env file in the root directory and add your Google Gemini API Key:
+   Create a .env file in the root directory and add your Google Gemini API Key:
 
-GEMINI_API_KEY=your_actual_api_key_here
-
+    ```
+        GEMINI_API_KEY=your_actual_api_key_here
+    ```
+    
 4. Run the Application:
 
-Launch the Streamlit dashboard:
+   Launch the Streamlit dashboard:
 
-python -m streamlit run app.py
+    ```
+       python -m streamlit run app.py
+    ```
