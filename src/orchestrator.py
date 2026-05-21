@@ -1,20 +1,8 @@
 import os
 import json
-from ingestion import clone_repository, cleanup_repository
-from parser import ASTAnalyzer
-from reviewer import CodeReviewer
-
-# def analyze_git_repo(repo_url: str) -> list:
-
-#     repo_path = None
-#     all_review_comment = []
-#     reviewer = CodeReviewer()
-
-#     try:
-#         repo_path = clone_repository(repo_url)
-
-
-
+from src.ingestion import clone_repository, cleanup_repository
+from src.parser import ASTAnalyzer
+from src.reviewer import CodeReviewer
 
 
 
@@ -70,7 +58,7 @@ def analyze_git_repo(repo_url: str) -> list:
 
 if __name__ == "__main__":
 
-    test_repo = "https://github.com/psf/requests-html" 
+    test_repo = "https://github.com/MJ-9669/Bookshelf-Scanner" 
     print("=== STARTING FULL AGENT CONTEXT TEST ===")
     results = analyze_git_repo(test_repo)
     
