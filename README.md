@@ -33,3 +33,26 @@ The application follows a strict 4-stage sequential pipeline:
 4. DASHBOARD (Streamlit)
    ├─ Renders parsed metrics & actionable feedback.
    └─ Filters outputs by Severity and Confidence levels.
+
+```
+## Setup Instructions
+
+1. Clone the repository:
+
+2. Install dependencies:
+
+It is recommended to use a Python virtual environment.
+
+pip install -r requirements.txt
+
+3. Configure Environment Variables:
+
+Create a .env file in the root directory and add your Google Gemini API Key:
+
+GEMINI_API_KEY=your_actual_api_key_here
+
+4. Run the Application:
+
+Launch the Streamlit dashboard:
+
+python -m streamlit run app.py
