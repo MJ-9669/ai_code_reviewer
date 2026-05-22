@@ -66,3 +66,23 @@ The application follows a strict 4-stage sequential pipeline:
     ```
        python -m streamlit run app.py
     ```
+
+
+## Known Limitations
+
+1. API Rate Limiting: Because the AST parser sends individual functions to the LLM concurrently, large repositories may trigger 429 (Too Many Requests) errors on free-tier LLM accounts. Mitigation applied: The pipeline includes an exponential backoff script that pauses execution for 20 seconds when limits are hit.
+
+2. Context Isolation: Because the AST parser isolates functions, the LLM currently lacks global repository context (e.g., it might flag an unused variable that is actually imported and used in another file).
+
+3. Language Support: Currently, the AST parser only supports .py (Python) files.
+
+
+## What I Would Build Next (Future Scope)
+
+With more time, I would expand this agent in the following ways:
+
+1. GitHub API Integration: Instead of just a Streamlit dashboard, I would integrate PyGitHub to have the agent post these reviews directly as inline comments on live Pull Requests.
+
+2. Multi-Language Support: Replace Python's native ast library with tree-sitter to support parsing JavaScript, Go, and Rust.
+
+3. RAG-based Context: Implement a lightweight vector database (like ChromaDB) to store the entire repository. This would allow the LLM to cross-reference functions and understand global architecture before writing a review.
