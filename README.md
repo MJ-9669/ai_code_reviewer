@@ -32,7 +32,7 @@ The application follows a strict 4-stage sequential pipeline:
        ▼
 4. DASHBOARD (Streamlit)
    ├─ Renders parsed metrics & actionable feedback.
-   └─ Filters outputs by Severity and Confidence levels.
+   └─ Filters outputs by Severity and Confidence levels.```
 
 ```
 ## Setup Instructions
